@@ -1,0 +1,32 @@
+<h2>{{viewTitle}}</h2>
+
+<form action="/coder" method="POST" autocomplete="off">
+    <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" class="form-control" name="name" id="name" placeholder="Full Name">
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+    </div>
+    <div class="form-group">
+        <div class="form-group md-6">
+            <label>Mobile</label>
+            <input type="text" name="mobile" id="mobile" placeholder="Mobile">
+        </div>
+        <div class="form-group md-6">
+            <label>City</label>
+            <input type="text" name="city" id="city" placeholder="city">
+        </div>
+    </div>
+    <div class="form-group">
+        <button type="submit" class="btn btn-info">
+            <i class="fa fa-database"></i>
+            Submit
+        </button>
+        <a href="" class="btn btn-danger">
+            <i class="fa fa-list-alt"></i>
+            View All
+        </a>
+    </div>
+</form>

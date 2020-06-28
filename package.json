@@ -1,0 +1,23 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "description": "This is basic CRUD node-express app having a connectivity with mongodb and mongoose",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rohan Codebloded",
+  "license": "ISC",
+  "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.3",
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.4",
+    "express-hbs": "^2.3.3",
+    "handlebars": "^4.7.6",
+    "mongoose": "^5.9.20",
+    "nodemon": "^2.0.4",
+    "pug": "^3.0.0"
+  }
+}

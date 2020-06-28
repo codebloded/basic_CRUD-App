@@ -1,0 +1,30 @@
+<h3>
+    <a href="/coder">
+        <i class="fa fa-plus"></i>
+        Create New
+    </a>
+    Coders
+</h3>
+<table class="table table-stripped">
+    <thead>
+        <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>City</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each info}}
+            <tr>
+                <td>{{this.name}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.mobile}}</td>
+                <td>{{this.city}}</td>
+            </tr>
+
+
+
+        {{/each}}
+    </tbody>
+</table>
