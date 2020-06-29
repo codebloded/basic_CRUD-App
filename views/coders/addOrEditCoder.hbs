@@ -1,22 +1,31 @@
+<div class="alert-danger">
+    {{error}}
+</div>
 <h2>{{viewTitle}}</h2>
 
+
 <form action="/coder" method="POST" autocomplete="off">
+<input type="hidden" name="_id" value="{{coder._id}}" id="">
     <div class="form-group">
         <label>Full Name</label>
-        <input type="text" class="form-control" name="name" id="name" placeholder="Full Name">
+        <input type="text" class="form-control" name="name"  value="{{coder.name}}" placeholder="Full Name">
+        <div class="text-danger">{{coder.nameError}}</div>
     </div>
     <div class="form-group">
         <label>Email</label>
-        <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+        <input type="email" class="form-control" name="email" value="{{coder.email}}" id="email" placeholder="Email">
+          <div class="text-danger">
+            {{coder.emailError}}
+        </div>
     </div>
     <div class="form-group">
         <div class="form-group md-6">
             <label>Mobile</label>
-            <input type="text" name="mobile" id="mobile" placeholder="Mobile">
+            <input type="text" name="mobile"  value="{{coder.mobile}}" placeholder="Mobile">
         </div>
         <div class="form-group md-6">
             <label>City</label>
-            <input type="text" name="city" id="city" placeholder="city">
+            <input type="text" name="city"  value="{{coder.city}}" placeholder="city">
         </div>
     </div>
     <div class="form-group">
@@ -24,7 +33,7 @@
             <i class="fa fa-database"></i>
             Submit
         </button>
-        <a href="" class="btn btn-danger">
+        <a href="/coder/info" class="btn btn-danger">
             <i class="fa fa-list-alt"></i>
             View All
         </a>

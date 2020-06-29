@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const validator = require('email-validator')
 
 const coderSchema = mongoose.Schema({
     name:{
@@ -18,6 +19,13 @@ const coderSchema = mongoose.Schema({
         required:true
     }
 });
+
+
+coderSchema.path('email').validate((val)=>{
+    return validator.validate(val);
+},"Invalid Email")
+
+
 
 let Coder = mongoose.model('Coder',coderSchema);
 
