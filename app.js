@@ -44,7 +44,7 @@ app.use('/coder', coderRouter);
 // ============CONNECT TO MONGOOSE==============
 const url = 'mongodb://localhost:27017/myapp';
 mongoose.Promise = global.Promise;
-mongoose.connect(url, ({ useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify:true,  useFindAndModify:true }));
+mongoose.connect(url, ({ useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify:false}));
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', () => {

@@ -100,20 +100,34 @@ function handleValidationError(err,body)
     }
 }
 
-function updateRecord(req,res){
-    Coder.findOneAndUpdate({id:req.body._id},req.body,{new:true},(err,dox)=>{
+
+//Route for deleting the coder information form the app and form the database also 
+coderRouter.get('/delete/:id',(req,res)=>{
+    Coder.findByIdAndRemove(req.params.id,(err,dox)=>{
         if(!err)
         {
-            res.redirect('/coders/info');
+            res.redirect('/coder/info');
+        }
+        else{
+            console.log("There is any error in deleting the coder information "+ err);
+        }
+    });
+});
+
+function updateRecord(req,res){
+    Coder.findOneAndUpdate({_id:req.body._id},req.body,{new:true},(err,dox)=>{
+        if(!err)
+        {
+            res.redirect('/coder/info')
         }
         else{
             if(err.name == 'ValidationError')
             {
-                handleValidationError(err,req.body);
-                res.render('coders/addOrEditCoder.hbs',({
+                handleValidationError(err,body);
+                res.render('coders/addOrEditCoder.hbs',{
                     viewTitle:'Update Coder',
                     coder:req.body
-                }))
+                })
             }
             else{
                 console.log("Error occured in updating the coder id"+ err)
